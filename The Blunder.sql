@@ -9,6 +9,6 @@ Write a query calculating the amount of error (i.e.:  average monthly salaries),
 WITH A AS (
     SELECT AVG(`SALARY`) AS `A_AVG` FROM `EMPLOYEES`
 ), B AS (
-    SELECT AVG(REPLACE(`salary`, '0', '')) AS `B_AVG` FROM `EMPLOYEES`
+    SELECT AVG(REPLACE(`SALARY`, '0', '')) AS `B_AVG` FROM `EMPLOYEES`
 )
 SELECT CEILING(A.A_AVG - B.B_AVG) FROM B, A;
